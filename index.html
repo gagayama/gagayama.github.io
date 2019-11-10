@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>セルフリファレンス</title>
+    <link rel="stylesheet" href="css/styles.css">
+    </script>
+  </head>
+
+  <!-- body -->
+  <body>
+    <!-- -<header>- -->
+    <header>
+    </header>
+		<h1 class="caution-title caution-open-btn">CAUTION</h1>
+		<!-- caution-open-btn -->
+		<div class="caution">
+			<p class="arrows">
+				<span class="arrow down">▼</span>
+				<span class="arrow up">▲</span>
+			</p>
+
+			<span>＜HTML＞</span>
+			<ul>
+				<li></li>
+			</ul>
+
+			<span>＜CSS＞</span>
+			<ul>
+				<li>セミコロン ";" の付け忘れ注意!! それでも動いてしまうので気づきにくい、レイアウトが崩れた時にチェックしてみる。</li>
+				<li>"absolute" で "right:0" に指定したとき右に寄らず左に寄る場合は要素が画面左右全体に広がっていると思われる。</li>
+				<li>inline"であるのにも関わらず、要素が画面左右全体に広がっている場合は"width:100%"がになっていると思われる。</li>
+			</ul>
+
+			<span>＜javaScript＞</span>
+			<ul>
+				<li></li>
+			</ul>
+
+			<span>＜jQuery＞</span>
+			<ul>
+				<li>"id"の"#" や "class"の"." の付け忘れ注意!!</li>
+				<li>"id","class"呼び出し時、スペルミス注意、コピペしたほうがいい。</li>
+				<li>"id"名、"class"名、"data-"属性名　等に大文字を使うと、うまくいかない。使えない？</li>
+				<li>要素が非表示("display:none"とか)になってると、座標が取得できない、その他の値もダメかも、、※未検証</li>
+				<li>"$(this)"を使って子要素を取得するときは、本当にその子要素を持っているか、よく確認する。　クリックイベントで自身の要素外を操作する時は、注意が必要。</li>
+				<li>$('this') ←誤　　　　$(this) ←正   ※" ' "いらない、たまにやる。
+			</ul>
+
+		</div>
+
+		<div id="page-link">
+			<div id="page-link-title">
+				<a style="font-size:17px">HTML Refalence　　&copy kagato nakayama</a>
+			</div>
+
+			<div id="page-link-btn">
+				<p class="show-refarence-btn" data-select-no="0">HTML</p>
+				<p class="show-refarence-btn" data-select-no="1">CSS</p>
+				<p class="show-refarence-btn" data-select-no="2">
+					javaScript</p>
+				<p class="show-refarence-btn" data-select-no="3">jQuery</p>
+			</div>
+
+		</div>
+
+		<div class="select-pg-wrapper">
+<!-- HTML HTML HTML HTML HTML HTML HTML  -->
+<!-- HTML HTML HTML HTML HTML HTML HTML  -->
+			<div id="html" class="pg-wrapper">
+				<div class="pg-title show-refarence-btn" id="html-title" data-select-no="0">
+					<h1>HTML</h1>
+				</div>
+				<div id="html-refarence" class="refarence-prop">
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">独自の属性:</p>
+						<p class="info-title  ">&lt;div data-self="selfEle"&gt;独自&lt;div&gt;</p>
+						<p class="info-text">
+							"data-"に続く"self"が任意の属性名、"selfEle"が属性値。
+							<br>
+							<br>　＜呼び出し＞
+							<br>　　　$('div').data('tes');
+							<br>　　　$('div').attr('data-tes');　　　//、、、の二つ。
+							<br>　　　
+							<br>　　　※属性名に大文字を使うとうまくいかない。
+							<br>　　　　　○　'data-tes'　　　×　'data-tEs'
+						</p>
+					</div>
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L"></p>
+						<p class="info-title  ">&lt;&gt;</p>
+						<p class="info-text">
+
+							<br>　　　
+							<br>　　　
+							<br>　　　
+						</p>
+					</div>
+
+				</div>
+			</div>
+<!-- CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS  -->
+<!-- CSS CSS CSS CSS CSS CSS CSS CSS CSS CSS  -->
+			<div id="css" class="pg-wrapper">
+				<div class="pg-title show-refarence-btn" id="css-title" data-select-no="1">
+					<h1>CSS</h1>
+				</div>
+				<div id="css-refarence" class="refarence-prop">
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">行間(縦)の空白</p>
+						<p class="info-title  ">line-height: 24px;</p>
+						<p class="info-text">
+							文字サイズも含めた縦幅を設定する。<br>親要素の"height"と同じ値にすると、縦の中央揃えに使える。</p>
+					</div>
+
+				<!-- 個別 -->
+				<div class="back-color">
+					<p class="info-title L">文字間の空白</p>
+					<p class="info-title  ">letter-spacing: 1px;</p>
+					<p class="info-text">なし
+					</p>
+				</div>
+				<!-- 個別 -->
+				<div class="back-color">
+					<p class="info-title L">boxの角丸め</p>
+					<p class="info-title  ">border-radius: 10px;</p>
+					<p class="info-text">
+					border-radius: 左上 右上 右下 左下;<br>
+					</p>
+				</div>
+				<!-- 個別 -->
+				<div class="back-color">
+					<p class="info-title L">選択状態、不可</p>
+					<p class="info-title  ">user-select: none;</p>
+					<p class="info-text">
+					<br>ドラッグやダブルクリックでテキストを選択できない。
+					<br>選択状態にならないので、色が変わらない
+					</p>
+				</div>
+				<!-- 個別 -->
+				<div class="back-color">
+					<p class="info-title L">自動改行禁止</p>
+					<p class="info-title  ">"width"指定</p>
+					<p class="info-text">
+					<br>"width"を"px"指定すれば、それ以上縮まないのでウインドウの伸縮に影響されない。
+					</p>
+				</div>
+				<!-- 個別 -->
+				<div class="back-color">
+					<p class="info-title L"></p>
+					<p class="info-title  "></p>
+					<p class="info-text">
+						　　　<br>
+						　　　<br>
+						　　　<br>
+						　　　<br>
+					</p>
+				</div>
+			</div>
+
+			</div>
+<!-- javaScript javaScript javaScript javaScript javaScript  -->
+<!-- javaScript javaScript javaScript javaScript javaScript  -->
+			<div id="jscript" class="pg-wrapper">
+				<!-- タイトル -->
+				<div class="pg-title show-refarence-btn" id="javascript-title" data-select-no="2">
+					<h1>javaScript</h1>
+				</div>
+				<!-- 説明部全体 -->
+				<div id="javascript-refarence" class="refarence-prop">
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">バッククォート</p>
+						<p class="info-title  ">" ` "　　=　　shift+@</p>
+
+					</div>
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">オブジェクト単体生成</p>
+						<p class="info-title  ">const obj = {　val:10,　str:"文字列"　}</p>
+						<p class="info-text">
+							const obj = {
+							<br>　　　val:10,
+							<br>　　　str:"文字列",
+							<br>　　　kansuu:()=>{　　　//関数
+							<br>　　　　　　//処理
+							<br>　　　}
+							<br>}
+						</p>
+					</div>
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">クラス</p>
+						<p class="info-title  ">class obj { //定義 }</p>
+						<p class="info-text">
+							＜宣言＞<br>
+							　　　class Obj{<br><br>
+							　　　　　//コンストラクター<br>
+							　　　　　　constructor(age){<br>
+							　　　　　　　　　this.val=10;<br>
+							　　　　　　　　　this.name="次郎"<br>
+							　　　　　　　　　this.age=age;<br>
+							　　　　　　　　　　　//※変数は"this"つけてコンストラクター内で宣言する
+						　　　　　　}<br><br>
+							　　　　　　kansuu(){ <br>
+						　　　　　　　　　　　　console.log(this.val);<br>
+							　　　　　　　　　　　　　//内部変数を使う時は、"this"	をつける。	<br><br>
+						　　　　　　　　　　　　console.log(`名前は${this.name}です`);<br>
+						　　　　　　　　　　　　　　//文字列の間に変数を使う特殊な書き方。<br>
+						　　　　　　　　　　　　　　//バッククォートを使う。<br>
+					 　　　　　　}<br>
+						<br>　　　}<br><br>
+							＜インスタンス生成＞<br>
+							　　　const obj =new Obj(30);<br>
+							　　　<br>
+							　　　<br>
+						</p>
+					</div>
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L"></p>
+						<p class="info-title  "></p>
+						<p class="info-text">
+
+							<br>　　　
+							<br>　　　
+							<br>　　　
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+<!-- jQuery jQuery jQuery jQuery jQuery jQuery jQuery jQuery  -->
+<!-- jQuery jQuery jQuery jQuery jQuery jQuery jQuery jQuery  -->
+			<div id="jquery" class="pg-wrapper">
+				<!-- タイトル -->
+				<div class="pg-title show-refarence-btn" id="jquery-title" data-select-no="3">
+					<h1>jQuery</h1>
+				</div>
+				<!-- 説明部全体 -->
+				<div id="jquery-refarence" class="refarence-prop">
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">子要素全て取得</p>
+						<p class="info-title  ">$('.element').find.('.ko').hide();</p>
+						<p class="info-text">
+							上記の場合全て'.ko'の要素が消える　　
+						</p>
+					</div>
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">直下の子要素のみ取得</p>
+						<p class="info-title  ">$('.element').children.('.ko').hide();</p>
+						<p class="info-text">
+							上記の場合直下の'.ko'要素が消える。<br>　
+							※↑間違い　要検証。　
+						</p>
+					</div>
+					<!-- 個別 -->
+					<!-- &lt;&gt; -->
+					<div class="back-color">
+						<p class="info-title L">属性の取得</p>
+						<p class="info-title  ">$('element').attr('element');</p>
+						<p class="info-text">
+							<br>＜属性の付加＞
+							<br><br>$('ele').attr('id','name');
+							<br><br>　　　　　　'ele'に'id'属性を追加して,属性値に'name'を与えている。
+							<br>　　　　　　※元から'id'をもっている場合は属性値の変更になる。
+						</p>
+					</div>
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">要素の座標を取得する</p>
+						<p class="info-title  ">$('.element').offset().top</p>
+						<p class="info-text">
+							<br>$('.element').offset().top;　　　//"top"取得
+							<br>$('.element').offset().left;　　//"left"取得
+						</p>
+					</div>
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">要素の位置にスクロール</p>
+						<p class="info-title  ">$('html,body').scrollTop('top');</p>
+						<p class="info-text">
+							<br>※"$('html,body')"は基本固定でつかう
+							<br>
+							<br>　$('html,body').scrollTop(300);
+							<br>　　　<span class="yellow">※scrollTop("飛びたい座標");</span>
+							<br>
+							<br>　$('html,body').animate({'scrollTop':300},500);
+							<br>　　　<span class="yellow">※animate({'scrollTop':"座標"},"移動速度(ミリ秒)");</span>
+						</p>
+					</div>
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L">positon:の座標</p>
+						<p class="info-title  ">$('.element').position();</p>
+						<p class="info-text">
+							<br>$('.element').position().top;　　//"top"取得
+							<br>$('.element').position().left;　//"left"取得
+							<br>
+							<br>　　　※"right" "bottom" はないっぽい　※未検証
+						</p>
+					</div>
+					<!-- 個別 -->
+					<div class="back-color">
+						<p class="info-title L"></p>
+						<p class="info-title  "></p>
+						<p class="info-text">
+							<br>　　　
+							<br>　　　
+							<br>　　　
+						</p>
+					</div>
+
+				</div>
+
+				<!-- 下部スペースブランク -->
+				<div class="bottm-space" style="height:800px"></div>
+
+			</div>
+
+		</div>
+		<!-- 下部タイトル -->
+		<div class="bottom-tiele">
+			<p id="copy-right">&copy 2019 kagat nakayama</p>
+			<p id="title">HTML  Self リファレンス</p>
+		</div>
+
+    <!-- デバグメッセージ -->
+    <div id="debug_mess">
+      <button onclick="debug_btn();">デバグ</button>
+      <button onclick="btn_dispMove();">右へ</button>
+      <font id="DM" onclick="btn();">でばぐメッセージ</font>
+    </div>
+
+	  <script type="text/javascript" src="js\jquery-3.4.1.min.js">
+	  </script>
+
+	  <script type="text/javascript" src="js/script.js"></script>
+
+	</body>
+</html>
